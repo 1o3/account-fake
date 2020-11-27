@@ -26,7 +26,7 @@ if (message.content === '.') {
       let count = 0;
       let ecount = 0;
       for(let x = 0; x < 90000; x++) {
-        message.channel.send(`**3iy avatar s.p.a.m chat هاَي سـ.بـام شات**[ " ${x} " ]`)
+        message.channel.send(`**http://tellonym.com/${x}`)
           .then(m => {
             count++;
           })
