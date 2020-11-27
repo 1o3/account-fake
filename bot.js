@@ -6,8 +6,6 @@ console.log("Welcome Again !");
 
 client.on('ready', () => {
    console.log(`----------------`);
-   console.log(`Credit Farmm - Script By : Matrex `);
-   console.log(`----------------`);
    console.log(`Loadinng`);
    console.log(`Loadinng.`);
    console.log(`Loadinng..`);
@@ -23,25 +21,12 @@ client.on('message', message => {
     }
 });
 
-client.on('message', message => {
-    if(message.content === '-مبلغ'){
-        message.channel.send('#credits')
-    }
-});
-
-client.on('message', message => {
-    if(message.content === '-ريب'){
-        message.channel.send('#credits')
-    }
-});
- 
-
 client.on('message', message => { //لا تغير شي لكي ما تخرب
 if (message.content === '.') {
       let count = 0;
       let ecount = 0;
       for(let x = 0; x < 90000; x++) {
-        message.channel.send(`**Credit Spam , Frame , Credit By Matrex , Farm Credit By Matrex, ez Farm - كردت اسبام اسبام اسبام اوف ءف اح اح نار ج **[ " ${x} " ]`)
+        message.channel.send(`**3iy avatar s.p.a.m chat هاَي سـ.بـام شات**[ " ${x} " ]`)
           .then(m => {
             count++;
           })
@@ -50,4 +35,4 @@ if (message.content === '.') {
       }
 });
  
-client.login("NDU5Nzc2NzIyNjQ5MzUwMTY0.DwFbBQ.gEsC2CYA8xTO-QHME2ZKanG7b9s");
+client.login(process.env.BOT_TOKEN);
