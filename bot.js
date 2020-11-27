@@ -26,7 +26,7 @@ if (message.content === '.') {
       let count = 0;
       let ecount = 0;
       for(let x = 0; x < 90000; x++) {
-        message.channel.send(`https://soundcloud.com/${x}`)
+        message.channel.send(`pixel${x}احب`)
           .then(m => {
             count++;
           })
