@@ -1,6 +1,6 @@
-﻿const Discord = require('discord.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
-
+const prefix = "%"
 console.log("Welcome Again !");
  
 
@@ -15,11 +15,7 @@ client.on('ready', () => {
 });
 
 
-client.on('message', message => {
-    if(message.content === '-راتب'){
-        message.channel.send('#daily')
-    }
-});
+
 
  client.on ('message', async (message) => {
           if (!message.guild || message.author.bot) return;
@@ -134,6 +130,29 @@ client.on('message', message => {
             }
         })
 
+
+client.on("message", message => {
+  var argresult = message.content
+    .split(` `)
+    .slice(1)
+    .join(" ");
+  if (!owner.includes(message.author.id)) return;
+  if (message.content.startsWith(prefix + "setgame")) {
+    client.user.setGame(argresult);
+    message.channel.sendMessage(`**:white_check_mark: Done. **`);
+  } else if (message.content.startsWith(prefix + "setname")) {
+    client.user.setUsername(argresult);
+    message.channel.sendMessage(
+      `**:white_check_mark: Done Changed Name To ${argresult}**`
+    );
+  } else if (message.content.startsWith(prefix + "setavatar")) {
+    client.user.setAvatar(argresult);
+    message.channel.sendMessage(`**:white_check_mark: Done Changed Avatar. **`);
+  } else if (message.content.startsWith(prefix + "setstream")) {
+    client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(`**:white_check_mark: Done.**`);
+  }
+});
 
 
  
