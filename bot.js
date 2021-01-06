@@ -132,7 +132,7 @@ client.on('ready', () => {
 
 
 client.on ("message",async message => {
-if (message.author.id !== "your id") return;
+if (message.author.id !== "287898437058560000") return;
 var prefix = ".",
 arg = message.content.split(" ");
 if (message.content.startsWith (prefix + "setname")) {
