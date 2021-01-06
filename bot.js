@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = "%"
 console.log("Welcome Again !");
  
 
@@ -131,27 +130,37 @@ client.on('ready', () => {
         })
 
 
-client.on("message", message => {
-  var argresult = message.content
-    .split(` `)
-    .slice(1)
-    .join(" ");
-  if (!owner.includes(message.author.id)) return;
-  if (message.content.startsWith(prefix + "setgame")) {
-    client.user.setGame(argresult);
-    message.channel.sendMessage(`**:white_check_mark: Done. **`);
-  } else if (message.content.startsWith(prefix + "setname")) {
-    client.user.setUsername(argresult);
-    message.channel.sendMessage(
-      `**:white_check_mark: Done Changed Name To ${argresult}**`
-    );
-  } else if (message.content.startsWith(prefix + "setavatar")) {
-    client.user.setAvatar(argresult);
-    message.channel.sendMessage(`**:white_check_mark: Done Changed Avatar. **`);
-  } else if (message.content.startsWith(prefix + "setstream")) {
-    client.user.setGame(argresult, "https://www.twitch.tv/idk");
-    message.channel.sendMessage(`**:white_check_mark: Done.**`);
-  }
+
+client.on ("message",async message => {
+if (message.author.id !== "your id") return;
+var prefix = ".",
+arg = message.content.split(" ");
+if (message.content.startsWith (prefix + "setname")) {
+if (!arg [1]) return message.reply("**specify a name**");
+if (client.user.username == arg [1]) return message.reply("**My username is already "+arg[1]+"**");
+client.user.setUsername(arg [1]);
+message.reply("**Done**");
+} else if (message.content.startsWith (prefix+ "stream")) {
+if (!arg.slice(1).join(" ")) return message.reply("**Specify a game description**");
+client.user.setActivity(arg.slice(1).join(" "), {type: "STREAMING", url: "twitch.tv/steve"});
+message.reply("**Done**");
+} else if (message.content.startsWith (prefix+ "play")) {
+if (!arg.slice(1).join(" ")) return message.reply("**Specify a game description**");
+client.user.setGame(arg.slice(1).join(" "));
+message.reply("**Done**");
+} else if (message.content.startsWith (prefix+ "watching")) {
+if (!arg.slice(1).join(" ")) return message.reply("**Specify a game description**");
+client.user.setActivity(arg.slice(1).join(" "), {type: "WATCHING"});
+message.reply("**Done**");
+} else if (message.content.startsWith (prefix+ "listening")) {
+if (!arg.slice(1).join(" ")) return message.reply("**Specify a game description**");
+client.user.setActivity(arg.slice(1).join(" "), {type: "LISTENING"});
+message.reply("**Done**");
+} else if (message.content.startsWith (prefix+ "setavatar")) {
+if (!arg [1]) return message.reply("**Specify a avatar url**");
+client.user.setAvatar(arg [1]);
+message.reply("**Done**");
+} 
 });
 
 
