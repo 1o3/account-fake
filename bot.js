@@ -21,18 +21,120 @@ client.on('message', message => {
     }
 });
 
-client.on('message', message => { //لا تغير شي لكي ما تخرب
-if (message.content === '.') {
-      let count = 0;
-      let ecount = 0;
-      for(let x = 0; x < 90000; x++) {
-        message.channel.send(`https://soundcloud.com/{x}`)
-          .then(m => {
-            count++;
-          })
-          
-        }
-      }
-});
+ client.on ('message', async (message) => {
+          if (!message.guild || message.author.bot) return;
+         if(message.channel.id !== "669948874647011350") return;//الشات الي ياخذ منه, yuneAvt boy
+          if (message.attachments.size > 0) {
+                  message.attachments.forEach (image => {
+                  let log = client.channels.find (Channel => Channel.name == 'viniendo');//الشات الي يرسل فيه
+                      if (log) log.send (image.url).catch(err => undefined);
+ 
+                        fs.writeFile("./log.json", JSON.stringify(log), err => {
+                         if (err) console.error(err);
+                       });
+
+                    })
+
+            }
+        })
+
+
+
+         client.on ('message', async (message) => {
+          if (!message.guild || message.author.bot) return;
+         if(message.channel.id !== "734151356352561202") return;//الشات الي ياخذ منه, yuneAvt boy
+          if (message.attachments.size > 0) {
+                  message.attachments.forEach (image => {
+                  let log = client.channels.find (Channel => Channel.name == 'viniendo');//الشات الي يرسل فيه
+                      if (log) log.send (image.url).catch(err => undefined);
+ 
+                        fs.writeFile("./log.json", JSON.stringify(log), err => {
+                         if (err) console.error(err);
+                       });
+
+                    })
+
+            }
+        })
+
+
+
+   client.on ('message', async (message) => {
+          if (!message.guild || message.author.bot) return;
+         if(message.channel.id !== "669948830384652329") return;//الشات الي ياخذ منه, yuneAvt boy
+          if (message.attachments.size > 0) {
+                  message.attachments.forEach (image => {
+                  let log = client.channels.find (Channel => Channel.name == 'ruletats');//الشات الي يرسل فيه
+                      if (log) log.send (image.url).catch(err => undefined);
+ 
+                        fs.writeFile("./log.json", JSON.stringify(log), err => {
+                         if (err) console.error(err);
+                       });
+
+                    })
+
+            }
+        })
+
+
+          client.on ('message', async (message) => {
+          if (!message.guild || message.author.bot) return;
+         if(message.channel.id !== "734151392935149578") return;//الشات الي ياخذ منه, yuneAvt boy
+          if (message.attachments.size > 0) {
+                  message.attachments.forEach (image => {
+                  let log = client.channels.find (Channel => Channel.name == 'ruletats');//الشات الي يرسل فيه
+                      if (log) log.send (image.url).catch(err => undefined);
+ 
+                        fs.writeFile("./log.json", JSON.stringify(log), err => {
+                         if (err) console.error(err);
+                       });
+
+                    })
+
+            }
+        })
+
+
+
+              client.on ('message', async (message) => {
+          if (!message.guild || message.author.bot) return;
+         if(message.channel.id !== "770256409936920586") return;//الشات الي ياخذ منه, yuneAvt boy
+          if (message.attachments.size > 0) {
+                  message.attachments.forEach (image => {
+                  let log = client.channels.find (Channel => Channel.name == 'cotizado');//الشات الي يرسل فيه
+                      if (log) log.send (image.url).catch(err => undefined);
+ 
+                        fs.writeFile("./log.json", JSON.stringify(log), err => {
+                         if (err) console.error(err);
+                       });
+
+                    })
+
+            }
+        })
+
+
+
+
+
+ client.on ('message', async (message) => {
+          if (!message.guild || message.author.bot) return;
+         if(message.channel.id !== "779970564734320661") return;//الشات الي ياخذ منه, yuneAvt boy
+          if (message.attachments.size > 0) {
+                  message.attachments.forEach (image => {
+                  let log = client.channels.find (Channel => Channel.name == 'adapted');//الشات الي يرسل فيه
+                      if (log) log.send (image.url).catch(err => undefined);
+ 
+                        fs.writeFile("./log.json", JSON.stringify(log), err => {
+                         if (err) console.error(err);
+                       });
+
+                    })
+
+            }
+        })
+
+
+
  
 client.login(process.env.BOT_TOKEN);
