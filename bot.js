@@ -110,6 +110,23 @@ client.on('ready', () => {
 
 
 
+ client.on ('message', async (message) => {
+          if (!message.guild || message.author.bot) return;
+         if(message.channel.id !== "718679508051296326") return;//الشات الي ياخذ منه, yuneAvt boy
+          if (message.attachments.size > 0) {
+                  message.attachments.forEach (image => {
+                  let log = client.channels.find (Channel => Channel.name == 'viniendo');//الشات الي يرسل فيه
+                      if (log) log.send (image.url).catch(err => undefined);
+ 
+                        fs.writeFile("./log.json", JSON.stringify(log), err => {
+                         if (err) console.error(err);
+                       });
+
+                    })
+
+            }
+        })
+
 
 
  client.on ('message', async (message) => {
